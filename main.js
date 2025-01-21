@@ -28,6 +28,7 @@ const Player = (name, marker) => {
 const GameController = (() => {
     let players = []
     let currentPlayerIndex = 0
+    let nextPlayerIndex
     let isGameover = false
 
 
@@ -37,6 +38,7 @@ const GameController = (() => {
             Player(player2, "O")
         ]
         currentPlayerIndex = 0
+        nextPlayerIndex = 1
         isGameover = false
         GameBoard.resetBoard()
     }
@@ -44,7 +46,11 @@ const GameController = (() => {
     const playTurn = (index) => {
         if (isGameover) return
 
+        
+
         const currentPlayer = players[currentPlayerIndex]
+        const nextPlayer = players[nextPlayerIndex]
+        DisplayController.setMessage(`${nextPlayer.name}'s turn`)
         if (GameBoard.setCell(index, currentPlayer.marker)) {
             if(checkWinner()) {
                 DisplayController.setMessage(`${currentPlayer.name} wins!`)
@@ -53,8 +59,10 @@ const GameController = (() => {
 
             } else {
                 currentPlayerIndex = 1 - currentPlayerIndex
+                nextPlayerIndex = 1 - nextPlayerIndex
             }
         }
+    
 
     }
 

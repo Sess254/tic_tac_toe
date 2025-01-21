@@ -6,6 +6,9 @@
 
 body {
     text-align: center;
+    font-family: "Jersey 10", serif;
+    color: rgb(3, 219, 3);
+    background: rgb(19, 16, 16);
 }
 
 h1 {
@@ -14,25 +17,36 @@ h1 {
 
 .cells {
     display: grid;
-    grid-template-columns: repeat(3, 75px);
-    grid-template-rows: repeat(3, 75px);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
     align-items: center;
     justify-content: center;
-    gap: 0;
-    margin-bottom: 2em;
+    padding: 2em 0;
 }
 
 .cell {
-    height: 75px;
-    width: 75px;
+    display: grid;
+    height: 1.5em;
+    width: 1.5em;
     margin: 0;
     padding: 0;
-    border: 1px solid  black;
+    border: 1px solid  rgb(3, 219, 3);;
     text-align: center;
     font-size: 4rem;
+    align-items: center;
 }
 
 
 .message {
     padding: 1em 0;
+    font-size: 1.5rem;
+}
+
+button {
+    padding: 1em 3em;
+    font-weight: 900;
+    color: rgb(3, 219, 3);
+    font-size: 1rem;
+    background: rgb(19, 16, 16);
+    border: 1px solid rgb(3, 219, 3);
 }
