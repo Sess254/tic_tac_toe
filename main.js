@@ -9,7 +9,7 @@ const GameBoard = (() => {
             board[index] = marker
             return true
         }
-        return alert(`Cell is already occupied`)
+        DisplayController.setMessage(`Invalid move,Cell is already occupied`)
     }
 
     const resetBoard = () => {
@@ -45,8 +45,6 @@ const GameController = (() => {
 
     const playTurn = (index) => {
         if (isGameover) return
-
-        
 
         const currentPlayer = players[currentPlayerIndex]
         const nextPlayer = players[nextPlayerIndex]
