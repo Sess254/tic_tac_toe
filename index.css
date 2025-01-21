@@ -5,6 +5,34 @@
 }
 
 body {
-    background: rgb(34, 29, 29);
-    color: #7ef13b;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+.cells {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    grid-template-rows: repeat(3, 75px);
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2em;
+}
+
+.cell {
+    height: 75px;
+    width: 75px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid  black;
+    text-align: center;
+    font-size: 4rem;
+}
+
+
+.message {
+    padding: 1em 0;
 }
